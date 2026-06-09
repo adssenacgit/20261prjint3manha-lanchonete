@@ -1,0 +1,71 @@
+### Swagger
+GET http://localhost:8080/swagger-ui.html
+
+### Criar categoria
+POST http://localhost:8080/api/categorias
+Content-Type: application/json
+
+{
+  "nome": "Bebidas",
+  "status": 1
+}
+
+### Listar categorias
+GET http://localhost:8080/api/categorias
+
+### Criar produto
+POST http://localhost:8080/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Café Especial",
+  "descricao": "Café torrado e moído",
+  "preco": 25.90,
+  "imagemUrl": "https://exemplo.com/cafe.jpg",
+  "status": 1,
+  "categoriaId": 1
+}
+
+### Criar usuário
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Administrador",
+  "login": "admin",
+  "senha": "123456",
+  "status": 1
+}
+
+### Criar pedido
+POST http://localhost:8080/api/pedidos
+Content-Type: application/json
+
+{
+  "numero": 1001,
+  "data": "2026-06-03T10:30:00",
+  "total": 51.80,
+  "status": 1
+}
+
+### Criar item de pedido
+POST http://localhost:8080/api/itens-pedidos
+Content-Type: application/json
+
+{
+  "quantidade": 2,
+  "precoUnitario": 25.90,
+  "subtotal": 51.80,
+  "status": 1,
+  "pedidoId": 1,
+  "produtoId": 1
+}
+
+### Inativar produto
+PATCH http://localhost:8080/api/produtos/1/status/0
+
+### Reativar produto
+PATCH http://localhost:8080/api/produtos/1/status/1
+
+### Apagar logicamente produto
+DELETE http://localhost:8080/api/produtos/1
